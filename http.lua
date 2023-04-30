@@ -162,7 +162,7 @@ do
 	end
 
 	local function find_sig(mdlname, pattern, typename, offset, deref_count)
-		local raw_match = client.find_signature(mdlname, pattern) or error("signature not found", 2)
+		local raw_match = Utils.FindSignature(mdlname, pattern) or error("signature not found", 2)
 		local match = cast("uintptr_t", raw_match)
 
 		if offset ~= nil and offset ~= 0 then
