@@ -6,7 +6,7 @@ ffi.cdef[[
     typedef void(__thiscall* set_clipboard_text)(void*, const char*, int);
 ]]
 
-local VGUI_Systemdll =  se.create_interface("vgui2.dll", "VGUI_System010")
+local VGUI_Systemdll =  Utils.CreateInterface("vgui2.dll", "VGUI_System010")
 local VGUI_System = ffi.cast(ffi.typeof('void***'), VGUI_Systemdll)
 local get_clipboard_text_count = ffi.cast( "get_clipboard_text_count", VGUI_System[ 0 ][ 7 ] )
 local get_clipboard_text = ffi.cast( "get_clipboard_text", VGUI_System[ 0 ][ 11 ] )
